@@ -1,0 +1,40 @@
+/* 1. ปลุกพลัง Tailwind CSS V4 */
+@import "tailwindcss";
+
+/* 2. ตั้งค่าพื้นฐานให้หน้าจอเต็ม 100% และ Font เป็นทางการ */
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc; /* สีเทาอ่อนสะอาดตาแบบระบบองค์กร */
+  color: #1e293b;
+}
+
+/* 3. หัวใจสำคัญ: บังคับขนาดแผนที่ Leaflet ให้แสดงผล */
+.leaflet-container {
+  width: 100%;
+  height: 500px; /* เพิ่มความสูงอีกนิดเพื่อให้ดูง่าย */
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 2px solid white;
+  z-index: 10; /* มั่นใจว่าอยู่บนพื้นหลัง */
+}
+
+/* 4. ตกแต่ง Input และ Select ให้ดูทันสมัย (Tailwind Utility) */
+input, select {
+  @apply transition-all duration-200;
+}
+
+input:focus, select:focus {
+  @apply ring-2 ring-blue-500 border-transparent outline-none;
+}
+
+/* 5. ปรับแต่งหน้าตา Marker Popup (ถ้ามี) */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 4px;
+}
